@@ -1,0 +1,16 @@
+version: '2.4'
+
+services:
+  ps3netsrv:
+    container_name: ps3netsrv
+    build:
+      context: .
+    restart: unless-stopped
+    volumes:
+      - ./games:/data
+    ports:
+      - 38008:38008/tcp
+    healthcheck:
+      test: timeout 2 bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/38008'
+      interval: 1m
+      timeout: 3s
