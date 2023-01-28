@@ -1,4 +1,6 @@
-FROM docker.io/debian:stable-slim AS builder
+ARG BASE_IMAGE=debian:stable-slim
+
+FROM docker.io/${BASE_IMAGE} AS builder
 
 ARG PS3NETSRV_REPO=https://github.com/aldostools/webMAN-MOD
 ARG PS3NETSRV_TAG=1.47.42
@@ -19,7 +21,7 @@ RUN \
   chmod +x Make.sh && ./Make.sh
 
 
-FROM docker.io/debian:stable-slim
+FROM docker.io/${BASE_IMAGE}
 
 RUN \
   adduser --shell /sbin/nologin --gecos '' --disabled-password ps3netsrv
