@@ -1,6 +1,8 @@
 [aguslr/docker-ps3netsrv][1]
 ============================
 
+[![publish-docker-image](https://github.com/aguslr/docker-ps3netsrv/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/aguslr/docker-ps3netsrv/actions/workflows/docker-publish.yml) [![docker-pulls](https://img.shields.io/docker/pulls/aguslr/docker-ps3netsrv)](https://hub.docker.com/r/aguslr/docker-ps3netsrv) [![image-size](https://img.shields.io/docker/image-size/aguslr/docker-ps3netsrv/latest)](https://hub.docker.com/r/aguslr/docker-ps3netsrv)
+
 
 This *Docker* image sets up *PS3 Net Server* inside a docker container.
 
