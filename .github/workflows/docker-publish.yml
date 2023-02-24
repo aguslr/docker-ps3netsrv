@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_BASE: debian:bullseye-slim
+  IMAGE_BASE: alpine:latest
   IMAGE_NAME: ${{ github.event.repository.name }}
   DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
