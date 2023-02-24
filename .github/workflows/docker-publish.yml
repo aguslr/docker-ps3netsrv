@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: Set name of image
         id: split
-        run: echo "::set-output name=image_name::${REPO_NAME#*-}"
+        run: echo "image_name=${REPO_NAME#*-}" >> $GITHUB_OUTPUT
 
   check:
     needs: variables
