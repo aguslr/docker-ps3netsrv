@@ -26,11 +26,11 @@ COPY --from=builder /opt/ps3netsrv/ps3netsrv /usr/local/bin
 
 EXPOSE 38008/tcp
 
-VOLUME /data
+VOLUME /games
 
 HEALTHCHECK --interval=1m --timeout=3s \
   CMD timeout 2 nc -z 127.0.0.1 38008
 
 USER ps3netsrv
 ENTRYPOINT ["/usr/local/bin/ps3netsrv"]
-CMD ["/data"]
+CMD ["/games"]
