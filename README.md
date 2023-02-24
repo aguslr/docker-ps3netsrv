@@ -1,7 +1,7 @@
 [aguslr/docker-ps3netsrv][1]
 ============================
 
-[![publish-docker-image](https://github.com/aguslr/docker-ps3netsrv/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/aguslr/docker-ps3netsrv/actions/workflows/docker-publish.yml) [![docker-pulls](https://img.shields.io/docker/pulls/aguslr/docker-ps3netsrv)](https://hub.docker.com/r/aguslr/docker-ps3netsrv) [![image-size](https://img.shields.io/docker/image-size/aguslr/docker-ps3netsrv/latest)](https://hub.docker.com/r/aguslr/docker-ps3netsrv)
+[![publish-docker-image](https://github.com/aguslr/docker-ps3netsrv/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/aguslr/docker-ps3netsrv/actions/workflows/docker-publish.yml) [![docker-pulls](https://img.shields.io/docker/pulls/aguslr/ps3netsrv)](https://hub.docker.com/r/aguslr/ps3netsrv) [![image-size](https://img.shields.io/docker/image-size/aguslr/ps3netsrv/latest)](https://hub.docker.com/r/aguslr/ps3netsrv)
 
 
 This *Docker* image sets up *PS3 Net Server* inside a docker container.
@@ -18,7 +18,7 @@ To use *docker-ps3netsrv*, follow these steps:
 1. Clone and start the container:
 
        docker run -p 38008:38008 \
-         -v "${PWD}"/games:/data docker.io/aguslr/docker-ps3netsrv:latest
+         -v "${PWD}"/games:/data docker.io/aguslr/ps3netsrv:latest
 
 2. Connect from *webMAN-MOD* to your *PS3 Net Server*'s IP address on port
    `38008`.
