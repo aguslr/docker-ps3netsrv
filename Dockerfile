@@ -3,7 +3,7 @@ ARG BASE_IMAGE=alpine:latest
 FROM docker.io/${BASE_IMAGE} AS builder
 
 ARG PS3NETSRV_REPO=https://github.com/aldostools/webMAN-MOD
-ARG PS3NETSRV_TAG=1.47.43
+ARG PS3NETSRV_TAG=1.47.44
 
 RUN \
   apk add --update --no-cache build-base \
