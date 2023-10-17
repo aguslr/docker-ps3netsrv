@@ -10,7 +10,3 @@ services:
       - ./games:/games
     ports:
       - 38008:38008/tcp
-    healthcheck:
-      test: timeout 2 nc -z 127.0.0.1 38008
-      interval: 1m
-      timeout: 3s
