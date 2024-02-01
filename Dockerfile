@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=library/alpine:latest
+ARG BASE_IMAGE=library/debian:stable-slim
 
 FROM docker.io/${BASE_IMAGE} AS builder
 
@@ -6,8 +6,11 @@ ARG PS3NETSRV_REPO=https://github.com/aldostools/webMAN-MOD
 ARG PS3NETSRV_TAG=1.47.45
 
 RUN \
-  apk add --update --no-cache build-base \
-  && rm -rf /var/cache/apk/*
+  apt-get update && \
+  env DEBIAN_FRONTEND=noninteractive \
+  apt-get install -y build-essential meson libmbedtls-dev wget \
+  -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
+  && apt-get clean && rm -rf /var/lib/apt/lists/* /var/lib/apt/lists/*
 
 WORKDIR /opt/ps3netsrv
 RUN \
@@ -29,7 +32,7 @@ EXPOSE 38008/tcp
 VOLUME /games
 
 HEALTHCHECK --interval=1m --timeout=3s \
-  CMD timeout 2 nc -z 127.0.0.1 38008
+  CMD timeout 2 bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/38008'
 
 USER ps3netsrv
 ENTRYPOINT ["/usr/local/bin/ps3netsrv"]
