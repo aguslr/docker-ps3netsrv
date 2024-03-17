@@ -18,7 +18,7 @@ To use *docker-ps3netsrv*, follow these steps:
 1. Clone and start the container:
 
        docker run -p 38008:38008 \
-         -v ./games:/games docker.io/aguslr/ps3netsrv:latest
+         -v "${PWD}"/games:/games docker.io/aguslr/ps3netsrv:latest
 
 2. Connect from *webMAN-MOD* to your *PS3 Net Server*'s IP address on port
    `38008`.
