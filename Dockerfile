@@ -6,7 +6,7 @@ ARG PS3NETSRV_REPO=https://github.com/aldostools/webMAN-MOD
 ARG PS3NETSRV_TAG=1.47.45
 
 WORKDIR /opt/ps3netsrv
-RUN <<-EOT bash
+RUN <<-EOT sh
 	set -eu
 
 	apt-get update
@@ -24,7 +24,7 @@ EOT
 
 FROM docker.io/${BASE_IMAGE}
 
-RUN <<-EOT bash
+RUN <<-EOT sh
 	set -eu
 
 	adduser --shell /sbin/nologin --gecos '' --disabled-password ps3netsrv
