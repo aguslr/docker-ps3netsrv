@@ -3,7 +3,7 @@ ARG BASE_IMAGE=library/debian:stable-slim
 FROM docker.io/${BASE_IMAGE} AS builder
 
 ARG PS3NETSRV_REPO=https://github.com/aldostools/webMAN-MOD
-ARG PS3NETSRV_TAG=1.47.46
+ARG PS3NETSRV_TAG=1.47.47
 
 WORKDIR /opt/ps3netsrv
 RUN <<-EOT sh
