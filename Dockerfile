@@ -27,7 +27,7 @@ FROM docker.io/${BASE_IMAGE}
 RUN <<-EOT sh
 	set -eu
 
-	adduser --shell /sbin/nologin --gecos '' --disabled-password ps3netsrv
+	useradd --shell /sbin/nologin --comment '' ps3netsrv
 EOT
 
 COPY --from=builder /opt/ps3netsrv/ps3netsrv /usr/local/bin
